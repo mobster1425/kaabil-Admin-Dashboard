@@ -1,0 +1,11 @@
+packages:
+     yum:
+       gcc-c++: []
+       make: []
+   commands:
+     01_node_binary:
+       command: |
+         n=$(which node)
+         n=${n%/bin/node}
+         chmod -R 755 $n/bin/*
+         cp -r $n/{bin,lib,share} /usr/local
